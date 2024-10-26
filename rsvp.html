@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP</title>
+</head>
+<body>
+
+<!-- Include Header -->
+<div id="header"></div>
+
+<!-- RSVP Content -->
+<div class="container rsvp-container">
+    <h2 class="rsvp-title">Please Respond</h2>
+    <h6 class="subtitle">Répondez s'il vous plaît</h6>
+
+    <p>We are thrilled to invite you to our upcoming event! Please let us know whether you will be able to join us for this special occasion. Your presence means a lot to us!</p>
+
+    <form id="rsvpForm">
+        <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+            <label for="emailOrPhone">Email or Phone:</label>
+            <input type="text" class="form-control" id="emailOrPhone" name="emailOrPhone" placeholder="Enter your email or phone number" required>
+        </div>
+        <div class="form-group">
+            <label for="response">Will you attend?</label>
+            <select class="form-control" id="response" name="response" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="yes">Yes, I will attend</option>
+                <option value="no">No, I am unable to attend</option>
+            </select>
+        </div>
+
+        <div class="optional-message" id="messageContainer">
+            <div class="form-group">
+                <label for="message">If no, please let us know why:</label>
+                <textarea class="form-control" id="message" name="message" placeholder="Your message (optional)"></textarea>
+            </div>
+        </div>
+
+        <button type="submit" class="rsvp-button">Submit</button>
+    </form>
+
+    <div id="currentResponse"></div>
+
+    <script src="rsvp.js"></script>
+</div>
+
+
+<!-- Include Bootstrap JS & dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="headerLoader.js"></script>
+<script src="rsvp.js"></script>
+</body>
+</html>
