@@ -10,6 +10,7 @@ h2 {
     margin-bottom: 30px;
     text-align: center;
     color: #FCB130;
+    font-weight: bold;
 }
 
 h3 {
@@ -134,13 +135,24 @@ h6 {
     text-align: center; /* Center title */
 }
 .invitation-details {
-    font-size: 1.2rem; /* Standard text size */
+    font-size: 1.5rem; /* Standard text size */
     line-height: 1.6; /* Line height for readability */
     margin-bottom: 30px; /* Margin below details */
     text-align: center; /* Center title */
 }
 .invitation-date,
 .invitation-location {
+    text-align: center;
+}
+
+.invitation-location-subtitle {
+    text-align: center;
+    font-weight: bold; /* Bold text for emphasis */
+    font-size: 1.2rem; /* Standard text size */
+}
+
+.invitation-date-bold,
+.invitation-location-title {
     text-align: center;
     font-weight: bold; /* Bold text for emphasis */
 }
