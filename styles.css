@@ -68,10 +68,14 @@ h6 {
 }
 
 .nav-tabs .nav-link {
-    color: #1D4886;
+    font-size: 1.5rem; /* Font size */
+    font-weight: bold; /* Bold text for emphasis */
+    color: #FCB130;
 }
 
 .nav-tabs .nav-link.active {
+    font-size: 1.5rem; /* Font size */
+    font-weight: bold; /* Bold text for emphasis */
     background-color: #FCB130;
     color: #FFFFFF;
     border-radius: 10px;
@@ -134,6 +138,7 @@ h6 {
     margin-bottom: 20px; /* Margin below title */
     text-align: center; /* Center title */
 }
+p,
 .invitation-details {
     font-size: 1.5rem; /* Standard text size */
     line-height: 1.6; /* Line height for readability */
@@ -148,7 +153,7 @@ h6 {
 .invitation-location-subtitle {
     text-align: center;
     font-weight: bold; /* Bold text for emphasis */
-    font-size: 1.2rem; /* Standard text size */
+    font-size: 1.3rem; /* Standard text size */
 }
 
 .invitation-date-bold,
@@ -198,6 +203,7 @@ h6 {
     font-size: 1.5rem; /* Large title */
     margin-bottom: 20px; /* Margin below title */
     text-align: center; /* Center title */
+    font-weight: bold;
 }
 .form-group {
     margin-bottom: 20px; /* Margin below form group */
