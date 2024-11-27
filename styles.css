@@ -168,9 +168,25 @@ p {
     text-align: center;
 }
 
+.invitation-location-information {
+    line-height: 1.2; /* Line height for readability */
+    margin-bottom: 10px; /* Margin below details */
+    text-align: center; /* Center title */
+}
+
+.invitation-location-information-1 {
+    text-align: center;
+    font-size: 1.5rem; /* Standard text size */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+.invitation-location-information-2 {
+    text-align: center;
+    font-size: 1.2rem; /* Standard text size */
+}
+
 .invitation-location-subtitle {
     text-align: center;
-    font-weight: bold; /* Bold text for emphasis */
     font-size: 1.5rem; /* Standard text size */
 }
 

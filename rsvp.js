@@ -19,12 +19,11 @@ document.getElementById('rsvpForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
 
     const name = document.getElementById('name').value;
-    const emailOrPhone = document.getElementById('emailOrPhone').value;
     const response = document.getElementById('response').value;
     const message = document.getElementById('message').value;
 
     // Create key for the RSVP
-    const key = `${name}-${emailOrPhone}`;
+    const key = `${name}`;
 
     // Check if the RSVP already exists
     if (rsvps[key]) {
