@@ -1,59 +1,25 @@
-// Global variable to hold RSVP data
-let rsvps = {};
+const form = document.getElementById('rsvpForm');
+form.addEventListener('submit', async function (event) {
+    event.preventDefault(); // Prevent the default form submission
 
-// Load existing RSVPs from local storage
-function loadRSVPs() {
-    const existingRsvps = localStorage.getItem('rsvps');
-    if (existingRsvps) {
-        rsvps = JSON.parse(existingRsvps);
+    const formData = new FormData(form);
+    const url = "https://script.google.com/macros/s/AKfycbzxJ-hD5L1Ji1vTLwwv5Uad59xX5emMKjxioklv_vQYpptb6042Yt6beOG39AmoVaBIGA/exec"; // Replace with your script URL
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await response.json();
+        if (result.status === "success") {
+            alert(result.message); // Show success message
+            form.reset(); // Clear the form
+        } else {
+            alert("There was an issue submitting the form.");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred. Please try again.");
     }
-}
-
-// Save RSVPs to local storage
-function saveRSVPs() {
-    localStorage.setItem('rsvps', JSON.stringify(rsvps));
-}
-
-// Event listener for form submission
-document.getElementById('rsvpForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent default form submission
-
-    const name = document.getElementById('name').value;
-    const response = document.getElementById('response').value;
-    const message = document.getElementById('message').value;
-
-    // Create key for the RSVP
-    const key = `${name}`;
-
-    // Check if the RSVP already exists
-    if (rsvps[key]) {
-        // Update existing RSVP
-        rsvps[key].response = response;
-        rsvps[key].message = message;
-        alert('RSVP updated successfully!');
-    } else {
-        // Record new RSVP
-        rsvps[key] = {
-            name,
-            emailOrPhone,
-            response,
-            message
-        };
-        alert('RSVP recorded successfully!');
-    }
-
-    // Save to local storage
-    saveRSVPs();
-
-    // Optionally clear the form after submission
-    document.getElementById('rsvpForm').reset();
 });
-
-// Show or hide the optional message input based on response selection
-document.getElementById('response').addEventListener('change', function() {
-    const messageContainer = document.getElementById('messageContainer');
-    messageContainer.style.display = this.value === 'no' ? 'block' : 'none';
-});
-
-// Load existing RSVPs on page load
-loadRSVPs();
